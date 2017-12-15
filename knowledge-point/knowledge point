@@ -1,0 +1,20 @@
+mkdir命令
+mkdir命令用来创建目录   语法：(mkdir (选项)(参数)
+
+
+fs模块
+fs模块用于对系统文件及目录进行读写操作。
+使用require('fs')载入fs模块，模块中所有方法都有同步和异步两种形式。
+fs.readFile(filename,[option],callback) 方法读取文件。
+readFile同步的写法就是没有回调函数：fs.readFileSync(filename,[options])。
+使用fs.writeFile(filename,data,[options],callback)写入内容到文件。
+
+
+os 模块
+Node.js os 模块提供了一些基本的系统操作函数
+os.tmpdir()
+返回操作系统的默认临时文件夹
+os.type()
+返回操作系统名
+os.hostname()
+返回操作系统的主机名。
