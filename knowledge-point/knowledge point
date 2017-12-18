@@ -1,3 +1,5 @@
+node app.js
+
 mkdir命令
 mkdir命令用来创建目录   语法：(mkdir (选项)(参数)
 
@@ -18,3 +20,20 @@ os.type()
 返回操作系统名
 os.hostname()
 返回操作系统的主机名。
+
+
+
+lodash是一个具有一致接口、模块化、高性能等特性的javascript工具库.  npm install lodash -g(http://lodashjs.com/docs/)
+
+
+使用nodemon让node自动重启
+自动重启的工具——nodemon  启动:nodemon server.js
+
+
+
+命令行参数可以用系统变量 process.argv 获取。执行时，直接在脚本文件后面，加上参数即可。
+#!/usr/bin/env node
+console.log('hello ', process.argv[2]);
+
+node.js 命令行框架 yargs
+yargs 模块能够解决如何处理命令行参数，yargs 模块提供 argv 对象，用来读取命令行参数
