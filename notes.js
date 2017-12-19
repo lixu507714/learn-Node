@@ -16,7 +16,17 @@ var getAll = () => {
     console.log('getAll the list');
 };
 
+var getNote = (title) => {
+    console.log('getNote', title);
+};
+
+var removeNote = (title) => {
+    console.log('removeNote', title);
+};
+
 module.exports = {
     addNode,
-    getAll
+    getAll,
+    getNote,
+    removeNote
 };

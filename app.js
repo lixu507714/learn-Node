@@ -37,8 +37,12 @@ if (command === 'add') {
 } else if (command === 'list') {
     console.log('Listing all notes');
     notes.getAll();
+} else if (command === 'read') {
+    console.log('read all notes');
+    notes.getNote(argv.title);
 } else if(command === 'delete') {
     console.log('delete all notes');
+    notes.removeNote(argv.title);
 } else {
     console.log('Commond not recognized');
 }

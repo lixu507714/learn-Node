@@ -33,7 +33,11 @@ lodash是一个具有一致接口、模块化、高性能等特性的javascript�
 
 命令行参数可以用系统变量 process.argv 获取。执行时，直接在脚本文件后面，加上参数即可。
 #!/usr/bin/env node
+
 console.log('hello ', process.argv[2]);
 
 node.js 命令行框架 yargs
 yargs 模块能够解决如何处理命令行参数，yargs 模块提供 argv 对象，用来读取命令行参数
+
+
+https://segmentfault.com/a/1190000006255923 数据库（Mac 上的 MySQL 管理工具 -- Sequel Pro）
