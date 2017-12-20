@@ -6,6 +6,8 @@ const _ = require('lodash');
 const notes = require('./notes.js');
 const yargs = require('yargs');
 const argv = yargs.argv;
+const json = require('./playground/json.js');
+console.log(json);
 // console.log(_.isString(true));
 // console.log(_.isString('Andrew'));
 

@@ -9,7 +9,13 @@ module.exports.add = (a, b) => {
 
 
 var addNode = (title, body) => {
-    console.log('Adding note', title, body);
+    // console.log('Adding note', title, body);
+    var notes = [];
+    var note = {
+        title,
+        body
+    };
+    notes.push(note );
 };
 
 var getAll = () => {
