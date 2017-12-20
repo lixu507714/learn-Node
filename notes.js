@@ -1,4 +1,5 @@
 console.log('Starting notes.js');
+const fs = require('fs');
 module.exports.age = 22;
 module.exports.addNodes = () => {
   return  'New note';
@@ -8,14 +9,37 @@ module.exports.add = (a, b) => {
 };
 
 
+var fetchNodes = () => {
+    try {
+        var notesString = fs.readFileSync('notes-data.json');
+        return JSON.parse(notesString);
+    } catch (e) {
+        return [];
+    }
+};
+
+var save = (notes) => {
+    fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+};
+
 var addNode = (title, body) => {
     // console.log('Adding note', title, body);
-    var notes = [];
+    var notes = fetchNodes();
     var note = {
         title,
         body
     };
-    notes.push(note );
+    //
+    // var dulicateNotes = notes.filter((note) => {
+    //    return note.title === title;
+    // });
+    var dulicateNotes = notes.filter((note) => note.title === title);
+
+    if (dulicateNotes.length === 0) {
+        notes.push(note);
+        save(notes);
+        return notes;
+    }
 };
 
 var getAll = () => {

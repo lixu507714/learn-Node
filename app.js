@@ -34,8 +34,12 @@ console.log('process', process.argv);
 console.log('yargs' ,argv);
 //
 if (command === 'add') {
-    console.log('Adding new note');
-    notes.addNode(argv.title, argv.body)
+    var note = notes.addNode(argv.title, argv.body);
+    if (note) {
+        console.log('Note created');
+    } else {
+        console.log('Note title taken'); // ????
+    }
 } else if (command === 'list') {
     console.log('Listing all notes');
     notes.getAll();
