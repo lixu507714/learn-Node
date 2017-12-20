@@ -46,9 +46,11 @@ if (command === 'add') {
 } else if (command === 'read') {
     console.log('read all notes');
     notes.getNote(argv.title);
-} else if(command === 'delete') {
-    console.log('delete all notes');
-    notes.removeNote(argv.title);
+} else if(command === 'remove') {
+    console.log('delete all remove');
+    var notesRemoved = notes.removeNote(argv.title);
+    var message = notesRemoved ? 'note was remove' : 'note not found';
+    console.log(message);
 } else {
     console.log('Commond not recognized');
 }
