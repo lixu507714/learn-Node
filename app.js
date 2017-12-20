@@ -27,7 +27,6 @@ console.log(json);
 
 
 // process.argv用法：Process.argv的用法是 第一个是node 第二个是脚本文件 第三个是打印的任意参数
-
 var command = process.argv[2];
 console.log('command', command);
 console.log('process', process.argv);
@@ -37,6 +36,7 @@ if (command === 'add') {
     var note = notes.addNode(argv.title, argv.body);
     if (note) {
         console.log('Note created');
+        notes.logNote(note);
     } else {
         console.log('Note title taken'); // ????
     }
@@ -45,7 +45,14 @@ if (command === 'add') {
     notes.getAll();
 } else if (command === 'read') {
     console.log('read all notes');
-    notes.getNote(argv.title);
+    var note = notes.getNote(argv.title);
+    if (note) {
+        console.log('note found');
+        notes.logNote(note);
+    } else {
+        console.log('note not found');
+    }
+
 } else if(command === 'remove') {
     console.log('delete all remove');
     var notesRemoved = notes.removeNote(argv.title);

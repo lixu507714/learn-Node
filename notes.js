@@ -34,7 +34,6 @@ var addNode = (title, body) => {
     //    return note.title === title;
     // });
     var dulicateNotes = notes.filter((note) => note.title === title);
-
     if (dulicateNotes.length === 0) {
         notes.push(note);
         save(notes);
@@ -46,8 +45,12 @@ var getAll = () => {
     console.log('getAll the list');
 };
 
+
 var getNote = (title) => {
     console.log('getNote', title);
+    var notes = fetchNodes();
+    var filterdNotes = notes.filter((note) => note.title !== title);
+    return filterdNotes[0];
 };
 
 var removeNote = (title) => {
@@ -62,9 +65,16 @@ var removeNote = (title) => {
     return note.length !== filterNotes.length;
 };
 
+
+var logNote = (note) => {
+    console.log(`Title: ${note.title}`);
+    console.log(`Title: ${note.body}`);
+};
+
 module.exports = {
     addNode,
     getAll,
     getNote,
-    removeNote
+    removeNote,
+    logNote
 };
