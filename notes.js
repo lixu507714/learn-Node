@@ -42,7 +42,8 @@ var addNode = (title, body) => {
 };
 
 var getAll = () => {
-    console.log('getAll the list');
+    // console.log('getAll the list');
+    return fetchNodes();
 };
 
 

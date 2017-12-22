@@ -41,3 +41,15 @@ yargs 模块能够解决如何处理命令行参数，yargs 模块提供 argv �
 
 
 https://segmentfault.com/a/1190000006255923 数据库（Mac 上的 MySQL 管理工具 -- Sequel Pro）
+
+http://i5ting.github.io/node-debug-tutorial/ (node-debug tutorial)
+
+
+
+nodejs里的repl(交互式解释器)
+交互式解释器（REPL）既可以作为一个独立的程序运行，也可以很容易地包含在其他程序中作为整体程序的一部分使用。
+REPL为运行JavaScript脚本与查看运行结果提供了一种交互方式，通常REPL交互方式可以用于调试、测试以及试验某种想法。
+
+
+
+
