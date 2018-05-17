@@ -1,1 +1,13 @@
-[{"title":"secrets2","body":"this is my secrets"},{"title":"secrets1","body":"this is my secrets"},{"title":"flag title"}]
+[
+  {
+    "title": "secrets2",
+    "body": "this is my secrets"
+  },
+  {
+    "title": "secrets1",
+    "body": "this is my secrets"
+  },
+  {
+    "title": "flag title"
+  }
+]

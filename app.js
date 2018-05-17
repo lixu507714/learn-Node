@@ -65,8 +65,8 @@ var command = argv._[0];
 
 
 
-
-// process.argv用法：Process.argv的用法是 第一个是node 第二个是脚本文件 第三个是打印的任意参数
+// process对象提供一系列属性，用于返回系统信息。
+// process.argv用法：Process.argv的用法是 第一个是node 第二个是脚本文件 第三个是打印的任意参数。
 // var command = process.argv[2];
 console.log('command', command);
 console.log('process', process.argv);
@@ -78,7 +78,7 @@ if (command === 'add') {
         console.log('Note created');
         notes.logNote(note);
     } else {
-        console.log('Note title taken');
+        console.log('Note title t aken');
     }
 } else if (command === 'list') {
     console.log('Listing all notes');

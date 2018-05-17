@@ -32,6 +32,16 @@ var fs = require("fs"); // Node 导入文件系统模块。
 fs.readFile(filename,[option],callback) 方法读取文件。
 readFile同步的写法就是没有回调函数：fs.readFileSync(filename,[options])。
 使用fs.writeFile(filename,data,[options],callback)写入内容到文件。
+一、writeFile 和 writeFileSync
+//异步方法
+fs.writeFile('./message.txt', '这是第一行',function(err){
+    if(err) console.log('写文件操作失败');
+    else console.log('写文件操作成功');
+});
+
+//同步方法
+fs.writeFileSync('./message.txt','这是第一行');
+
 
 
 os 模块
