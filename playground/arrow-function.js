@@ -5,7 +5,7 @@ var user = {
     name: 'Andrew',
     sayHi: () => {
         console.log(arguments);
-        console.log(`hi. I am ${this.name}`);
+        console.log(`hi. I am ${this.name}`); // 箭头函数没有this。所以是undefined
     },
     sayHiAlt () {
         console.log(arguments);
@@ -13,5 +13,5 @@ var user = {
     }
 };
 
-user.sayHiAlt(1, 2, 3);
+user.sayHiAlt();
 

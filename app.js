@@ -20,13 +20,10 @@ const bodyOptions = {
     alias: 'b'
 };
 
+// node app.js --t="123" --body="body"
 const argv = yargs
     .command('add', 'add a new note', {
-        title: {
-            describe: 'Title of note',
-            demand: true,
-            alias: 't'
-        },
+        title: titleOptions,
         body: {
             describe: 'Body of note',
             demand: true,
@@ -78,12 +75,12 @@ if (command === 'add') {
         console.log('Note created');
         notes.logNote(note);
     } else {
-        console.log('Note title t aken');
+        console.log('Note title taken');
     }
 } else if (command === 'list') {
     console.log('Listing all notes');
     var allNotes = notes.getAll();
-    console.log(`prinying ${allNotes.length} note(s)`);
+    console.log(`printing ${allNotes.length} note(s)`);
     allNotes.forEach((note) => notes.logNote(note));
 } else if (command === 'read') {
     console.log('read all notes');

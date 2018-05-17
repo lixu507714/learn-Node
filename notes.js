@@ -44,7 +44,7 @@ var addNode = (title, body) => {
 };
 
 var getAll = () => {
-    // console.log('getAll the list');
+    console.log('getAll the list');
     return fetchNodes();
 };
 
@@ -71,7 +71,7 @@ var removeNote = (title) => {
 
 var logNote = (note) => {
     console.log(`Title: ${note.title}`);
-    console.log(`Title: ${note.body}`);
+    console.log(`Body: ${note.body}`);
 };
 
 module.exports = {
