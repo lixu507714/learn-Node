@@ -26,13 +26,15 @@ var originalNote = {
 var originalNoteString = JSON.stringify(originalNote);
 console.log(originalNoteString);
 // 异步方法
-fs.writeFile('notes.json', JSON.stringify(Object.assign(JSON.parse(originalNoteString),{sex: '女'})), (err,data) =>{
-    if(err) {
-        console.log(err);
-    } else {
-        console.log(data);
-    }
-});
+// fs.writeFile('notes.json', JSON.stringify(Object.assign(JSON.parse(originalNoteString),{sex: '女'})), (err,data) =>{
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(data);
+//
+//         console.log(12222)
+//     }
+// });
 
 // fs.writeFile('./message.txt', '这是第一行',function(err){
 // if(err) console.log('写文件操作失败');
@@ -46,13 +48,25 @@ fs.writeFile('notes.json', JSON.stringify(Object.assign(JSON.parse(originalNoteS
 // fs.writeFileSync('./message.txt','这是第一行');
 
 fs.writeFileSync('notes.json', JSON.stringify(Object.assign(JSON.parse(originalNoteString),{sex: '女'})));  // 写入数据
+((cb)=>{
+    cb();
+})(()=>{
+    setTimeout(()=>{
+        console.log(333);
+    },0) // 异步
+});
 
+((cb)=>{
+    cb();
+})(()=>{
+    console.log(444); // 函数不一定是异步。
+});
 
-var noteString = fs.readFileSync('notes.json'); // 读取数据
-var note = JSON.parse(noteString);
-console.log(typeof note);
-console.log(note.title);
-
+// var noteString = fs.readFileSync('notes.json'); // 读取数据
+// var note = JSON.parse(noteString);
+// console.log(typeof note);
+// console.log(note.title);
+console.log(111);
 
 
 
