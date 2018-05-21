@@ -23,7 +23,7 @@ var save = (notes) => {
     fs.writeFileSync('notes-data.json', JSON.stringify(notes));
 };
 
-// node nodtes.js add --title=secret --body="some body here"
+// node notes.js add --title="secret" --body="some body here"
 var addNode = (title, body) => {
     // console.log('Adding note', title, body);
     var notes = fetchNodes();
