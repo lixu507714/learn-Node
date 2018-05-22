@@ -55,6 +55,10 @@ os.hostname()
 
 
 
+第四章
+Event loop是指处理外部事件，并把外部事件转换为回调来进行调用的实体。
+
+
 lodash是一个具有一致接口、模块化、高性能等特性的javascript工具库.  npm install lodash -g(http://lodashjs.com/docs/)(https://www.npmjs.com/package/lodash)
 
 
