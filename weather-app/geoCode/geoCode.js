@@ -17,8 +17,8 @@ var gencodeAddress = (address,callback)=>{
             console.log(`address:${body.results[0].formatted_address}`);
             callback(undefined,{
                 formatted_address:body.results[0].formatted_address,
-                latitude: body.results[0].latitude,
-                longitude: body.results[0].longitude
+                latitude: body.results[0].geometry.latitude,
+                longitude: body.results[0].geometry.longitude
             })
         }
         // console.log(body);
