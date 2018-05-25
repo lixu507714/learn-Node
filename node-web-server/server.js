@@ -1,19 +1,44 @@
 const express = require('express');
 const hbs = require('hbs'); // Handlebars.js 模板引擎
+const fs = require('fs');
 
 var app = express();
-
+// nodemon server.js -e js,hbs  运行
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public')); // help.html
+
+// 中间件
+// 中间件函数能够访问请求对象 (req)、响应对象 (res) 以及应用程序的请求/响应循环中的下一个中间件函数。
+// 下一个中间件函数通常由名为 next 的变量来表示。
+
+app.use((req,res,next)=>{
+    var now = new Date().toString();
+   var log = `${now}: ${req.method} ${req.url}`;
+   fs.appendFile('server.log',log+ '/n',(err)=>{
+       console.log(err);
+   });
+   console.log(log);
+    next();
+});
+
+//
+// app.use((req,res,next)=>{
+//     res.render('maintenance.hbs')
+// });
+
+
+app.use(express.static(__dirname + '/public')); // help.html
+
+
 
 hbs.registerHelper('getCurrentYear',()=>{
     return new Date().getFullYear();
 });
 
-// hbs.registerHelper('screamIt',(text)=>{
-//     return text;
-// });
+hbs.registerHelper('screamIt',(text)=>{
+    return text.toUpperCase();
+});
 
 // req (请求) 和 res (响应) 与 Node 提供的对象完全一致，因此，你可以调用 req.pipe()、req.on('data', callback) 以及任何 Node 提供的方法。
 
