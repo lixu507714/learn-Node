@@ -11,17 +11,26 @@ app.use(express.static(__dirname + '/public')); // help.html
 
 app.get('/',(req,res)=>{
     // 对网站首页的访问返回
-    res.send({
-        name: 'Andrew',
-        likes: [
-            'biking',
-            'cities'
-        ]
-    });
+    // res.send({
+    //     name: 'Andrew',
+    //     likes: [
+    //         'biking',
+    //         'cities'
+    //     ]
+    // });
+    res.render('home.hbs',{
+        pageTitle:'home Page',
+        welcomeMessage: 'welcome to my website',
+        currentYear: new Date().getFullYear()
+    })
 });
 
 app.get('/about',(req,res)=>{
-   res.send('About page');
+   // res.send('About page');
+    res.render('about.hbs',{
+        pageTitle:'About Page',
+        currentYear: new Date().getFullYear()
+    })
 });
 
 app.get('/bad',(req,res)=>{
