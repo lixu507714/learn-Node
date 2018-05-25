@@ -3,9 +3,17 @@ const hbs = require('hbs'); // Handlebars.js 模板引擎
 
 var app = express();
 
+hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
-
 app.use(express.static(__dirname + '/public')); // help.html
+
+hbs.registerHelper('getCurrentYear',()=>{
+    return new Date().getFullYear();
+});
+
+// hbs.registerHelper('screamIt',(text)=>{
+//     return text;
+// });
 
 // req (请求) 和 res (响应) 与 Node 提供的对象完全一致，因此，你可以调用 req.pipe()、req.on('data', callback) 以及任何 Node 提供的方法。
 
@@ -21,7 +29,7 @@ app.get('/',(req,res)=>{
     res.render('home.hbs',{
         pageTitle:'home Page',
         welcomeMessage: 'welcome to my website',
-        currentYear: new Date().getFullYear()
+        // currentYear: new Date().getFullYear()
     })
 });
 
@@ -29,7 +37,7 @@ app.get('/about',(req,res)=>{
    // res.send('About page');
     res.render('about.hbs',{
         pageTitle:'About Page',
-        currentYear: new Date().getFullYear()
+        // currentYear: new Date().getFullYear()
     })
 });
 
