@@ -95,3 +95,9 @@ REPL为运行JavaScript脚本与查看运行结果提供了一种交互方式，
 Express 是一个路由和中间件 Web 框架，其自身只具有最低程度的功能：Express 应用程序基本上是一系列中间件函数调用。
 中间件函数能够访问请求对象 (req)、响应对象 (res) 以及应用程序的请求/响应循环中的下一个中间件函数。下一个中间件函数通常由名为 next 的变量来表示。
 （http://expressjs.com/zh-cn/guide/using-middleware.html）
+
+ls -al ~/.ssh
+ssh-keygen -t rsa -b 4096 -C "邮箱"
+
+
+
