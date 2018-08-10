@@ -33,11 +33,25 @@ it('should square a number', () => {
 // });
 
 it('should expect user', () => {
-    var user = {location:'Philadelphia',age:21};
-    var res = utils.setName(user,'lx andrew');
+    var user = {location: 'Philadelphia', age: 21};
+    var res = utils.setName(user, 'lx andrew');
     console.log(res);
     expect(res).toInclude({
-        firstName:'lx',
-        lastName:'andrew'
+        firstName: 'lx',
+        lastName: 'andrew'
     })
+});
+
+it('should async add two numbers ', (done) => {
+    utils.addAsync(4, 3, (sum) => {
+        expect(sum).toBe(7).toBeA('number');
+        done();
+    });
+});
+
+it('should async square a number', (done) => {
+    utils.asyncSquare(3, (res) => {
+        expect(res).toBe(9).toBeA('number');
+        done();
+    });
 });
