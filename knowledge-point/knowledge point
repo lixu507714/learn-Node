@@ -100,7 +100,7 @@ ls -al ~/.ssh
 ssh-keygen -t rsa -b 4096 -C "邮箱"
 
 
-第六章（node-tests）
+第六章（node-tests） 运行（npm test || nodemon --exec 'npm test'）
 
 Mocha是一个能够运行在Node和浏览器中的多功能的JavaScript测试框架，它让异步测试简单且有趣。
 Mocha连续地运行测试，并给出灵活而精确的报告，同时能够将错误精确地映射到测试用例上。它托管在GitHub上。
@@ -108,3 +108,4 @@ Mocha连续地运行测试，并给出灵活而精确的报告，同时能够将
 it (info, function) 具体的测试语句会放在it的回调函数里.(一个it对应一个实际的test case)
 
 测试 首先要引入要测试的文件【const utils = require('./utils')】，然后在package.json里面配置要测试的文件目录。例如：【"test": "mocha **/**/*.test.js"】。
+
