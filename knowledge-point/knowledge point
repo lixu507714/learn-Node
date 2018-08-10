@@ -109,3 +109,7 @@ it (info, function) 具体的测试语句会放在it的回调函数里.(一个it
 
 测试 首先要引入要测试的文件【const utils = require('./utils')】，然后在package.json里面配置要测试的文件目录。例如：【"test": "mocha **/**/*.test.js"】。
 
+expect断言库的使用：一般在测试用例文件的顶部，声明引用的断言库. 用法：https://github.com/mjackson/expect
+
+
+
