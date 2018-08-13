@@ -116,6 +116,13 @@ rewire模块，基本功能与require相同，都是用于导入模块，它会�
 这两个函数可以分别用于获取和修改模块中的变量/函数，测试的时候，当我们需要获取或者重写私有变量/函数，rewire非常有用。
 
 
+第七章
 
+1、下载mongodb（https://blog.csdn.net/guoquanyou/article/details/70159471）
+cd mongo/bin    ls     node     ./mongod --dbpath ~/mongo-data   ./mongo    db.Todos.insert({text:'Film new node course'})    db.Todos.find()
+
+
+2、（https://github.com/mongodb/node-mongodb-native）  mongodb 数据
+MongoClient被设计成线程安全、可以被多线程共享的。通常访问数据库集群的应用只需要一个实例，所以这次调整我们设计成单例形式。如果出于某些原因，你决定使用多个实例，请注意：所有资源使用限制（最大连接数等等）对每个MongoClient都适用；销毁一个实例时，请确认调用MongoClient.close()方法来清理资源。
 
 
