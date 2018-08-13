@@ -9,7 +9,7 @@ it('should return hello world response', (done) => {
         .expect((res) => {
             expect(res.body).toInclude({
                 error: 'Page not found.'
-            })
+            });
         })
         .end(done);
 });
@@ -22,7 +22,7 @@ it('should return my user object', (done) => {
             expect(res.body).toInclude({
                 name: 'lx',
                 age: 24
-            })
+            });
         })
         .end(done);
 });

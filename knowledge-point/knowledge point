@@ -109,7 +109,13 @@ it (info, function) 具体的测试语句会放在it的回调函数里.(一个it
 
 测试 首先要引入要测试的文件【const utils = require('./utils')】，然后在package.json里面配置要测试的文件目录。例如：【"test": "mocha **/**/*.test.js"】。
 
-expect断言库的使用：一般在测试用例文件的顶部，声明引用的断言库. 用法：https://github.com/mjackson/expect
+expect断言库的使用：一般在测试用例文件的顶部，声明引用的断言库. 用法：https://github.com/mjackson/expect。
+
+rewire模块，基本功能与require相同，都是用于导入模块，它会为导入的模块添加两个特殊的函数：__get__与__set__。
+（https://blog.csdn.net/fundebug/article/details/79166500）
+这两个函数可以分别用于获取和修改模块中的变量/函数，测试的时候，当我们需要获取或者重写私有变量/函数，rewire非常有用。
+
+
 
 
 
