@@ -2,16 +2,22 @@ var mongoose = require('mongoose'); // 引入 mongoose ，然后连接我们本�
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/testApp');
+var Schema = mongoose.Schema;
 
-var Todo = mongoose.model('Todo', new mongoose.Schema({
+var Todo = mongoose.model('Todo', new Schema({
     text: {
-        type: String
+        type: String,
+        required: true, // 字段是必要的
+        minlength: 1,
+        trim: true
     },
     completed: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
     completedAt: {
-        type: Number
+        type: Number,
+        default: null
     }
 }));
 
@@ -26,13 +32,32 @@ var Todo = mongoose.model('Todo', new mongoose.Schema({
 // });
 
 var otherTodo = new Todo({
-    text:'feed the cat',
+    text: 'feed the cat',
     completed: true,
-    completedAt:123
+    completedAt: 123
 });
 
-otherTodo.save().then((doc)=>{
-   console.log('save todo',doc);
-},(e)=>{
-    console.log('Unable to todo',e);
+otherTodo.save().then((doc) => {
+    console.log(JSON.stringify(doc, undefined, 2));
+}, (e) => {
+    console.log('Unable to todo', e);
+});
+
+var User = mongoose.model('User', new Schema({
+    email: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 1
+    }
+}));
+
+var newUser = new User({
+    email: 'lx507714@163.com'
+});
+
+newUser.save().then((doc) => {
+    console.log(JSON.stringify(doc, undefined, 2))
+}, (e) => {
+    console.log(e);
 });
