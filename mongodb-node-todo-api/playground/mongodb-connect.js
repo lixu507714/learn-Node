@@ -2,7 +2,7 @@
 const {MongoClient, ObjectID} = require('mongodb');
 // var obj = new ObjectID();
 // console.log(obj);
-//插入操作
+//插入操作 链接名字为TodoApp 的数据库
 MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     if (err) {
         return console.log('Unable to connect to MongoDB service')
