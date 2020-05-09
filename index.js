@@ -55,5 +55,15 @@ var server = app.listen(3000,function(){
 
 
 
+const user = {
+  name:'李旭'
+}
+
+const templete = `<h2>${user.name}</h2>`; // es6 模版字符串
+const templetes = '<h2><%= user.name %></h2>' // 字符串
+
+ejs.render(templetes,user) // 渲染函数
+
+
 // server.listen(4300);
 // "test": "mocha **/**/*.test.js",

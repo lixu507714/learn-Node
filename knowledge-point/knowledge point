@@ -127,3 +127,12 @@ MongoClient被设计成线程安全、可以被多线程共享的。通常访问
 
 mongoose 参考手册（https://cnodejs.org/topic/548e54d157fd3ae46b233502）
 Nodejs 进阶：Express 常用中间件 body-parser 实现解析.(http://www.cnblogs.com/chyingp/p/nodejs-learning-express-body-parser.html)
+
+
+
+服务端渲染：
+搜索引擎优化 + 首屏渲染速度优化
+
+1.rpc调用：nodejs建立多路复用的rpc通道；net
+2.ejs 模版引擎库
+3.api服务-restful（fasebook开发实现api服务的库）
